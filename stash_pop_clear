@@ -1,0 +1,216 @@
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~ (master)
+$ cd OneDrive
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive (master)
+$ cd Desktop
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop (master)
+$ cd Demo
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ ls -a
+./  ../  .git/  first.txt  second.txt  third.txt
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ touch practice.txt
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ vi practice.txt
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ cat practice.txt
+this file is for checking git stash and git stash pop and git stash clear
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ rm -rf tg.txt // if it is present or not we can remove a file
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        practice.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git add .
+warning: in the working copy of 'practice.txt', LF will be replaced by CRLF the next time Git touches it
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git stash
+Saved working directory and index state WIP on master: 45e45ac stash pop
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git log
+commit 45e45ac5739bb04332fd7173a97446d5e1aad0a8 (HEAD -> master)
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 23:40:41 2023 +0530
+
+    stash pop
+
+commit b06de5bd12c7a0af903c7f826bd7534e4bc45bea
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 22:09:55 2023 +0530
+
+    restore
+
+commit cc95fc66e141fdd40bfef905fcfa4a7fe1f20391
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 21:00:25 2023 +0530
+
+    first file comitted
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git commit -m "practice.txt file is stashed"
+On branch master
+nothing to commit, working tree clean
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   practice.txt
+
+Dropped refs/stash@{0} (c300551e5839ae50ae5596717def64ee555e84b9)
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git add .
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git commit -m "practice.txt file is stashed"
+[master 7e54d63] practice.txt file is stashed
+ 1 file changed, 1 insertion(+)
+ create mode 100644 practice.txt
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git log
+commit 7e54d63b0bdc11a45adf697b8e545be283412c41 (HEAD -> master)
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 23:46:17 2023 +0530
+
+    practice.txt file is stashed
+
+commit 45e45ac5739bb04332fd7173a97446d5e1aad0a8
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 23:40:41 2023 +0530
+
+    stash pop
+
+commit b06de5bd12c7a0af903c7f826bd7534e4bc45bea
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 22:09:55 2023 +0530
+
+    restore
+
+commit cc95fc66e141fdd40bfef905fcfa4a7fe1f20391
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 21:00:25 2023 +0530
+
+    first file comitted
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ vi practice2.txt
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ cat practice2.txt
+this is for git stash clear
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ vi practice.txt
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ cat practice.txt
+this file is for checking git stash and git stash pop
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git add practice.txt
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git commit -m "practice.txt modified"
+[master e837e0d] practice.txt modified
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git log
+commit e837e0da9ed8f6859ae631222fadd2539ecba252 (HEAD -> master)
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 23:48:07 2023 +0530
+
+    practice.txt modified
+
+commit 7e54d63b0bdc11a45adf697b8e545be283412c41
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 23:46:17 2023 +0530
+
+    practice.txt file is stashed
+
+commit 45e45ac5739bb04332fd7173a97446d5e1aad0a8
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 23:40:41 2023 +0530
+
+    stash pop
+
+commit b06de5bd12c7a0af903c7f826bd7534e4bc45bea
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 22:09:55 2023 +0530
+
+    restore
+
+commit cc95fc66e141fdd40bfef905fcfa4a7fe1f20391
+Author: Praveena <praveena9515212513@gmail.com>
+Date:   Thu Jan 5 21:00:25 2023 +0530
+
+    first file comitted
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        practice2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ cat practice2.txt
+this is for git stash clear
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git stash
+No local changes to save
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git add .
+warning: in the working copy of 'practice2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git stash
+Saved working directory and index state WIP on master: e837e0d practice.txt modified
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   practice2.txt
+
+Dropped refs/stash@{0} (783cd2fdcabb60f28679bfadf098fa320d0faee5)
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git stash
+Saved working directory and index state WIP on master: e837e0d practice.txt modified
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git stash clear
+
+Praveena@LAPTOP-NFTFVK5L MINGW64 ~/OneDrive/Desktop/Demo (master)
+$ git commit -m "stash is cleared"
+On branch master
+nothing to commit, working tree clean
+
+
+
+
